@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Office form</title>
+  </head>
+  <body>
+	  <h1>Office form</h1>
+	  <p th:text="${msg}"></p>
+	  
+	 
+	  <div class="container">
+		    <form th:object="${Oobj}" th:action="@{/office}" method="post">
+			  <table class="table table-bordered">
+				  <tr>
+					  <td>
+						  OFFICE Name:
+					  </td>
+	                 <td><input type="text"th:field="*{oName}"></td>
+				  </tr>
+				  <tr>
+					  <td>OFFICE CITY:</td>
+					  <td><input type="text"th:field="*{oLoc}"></td>
+				</tr>
+				  <tr>
+					  <input type="submit" value="submit" class="btn btn-primary">
+				  </tr>
+			  </table>
+			  <a href="/O">Show Data</a>
+		  </form>
+	  </div>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
